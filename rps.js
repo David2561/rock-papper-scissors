@@ -1,25 +1,26 @@
+let result = "";
 let choices = new Array();
+
 choices=["rock","paper","scissors"];
             
 function choose(){
     return choices[Math.floor(Math.random()*10)%3];
 }
 
-let aiChoice = choose();
-let result = "";
-
 function play(playerChoice){
-    let playerChoice = playerChoice.toLowerCase;
+    playerChoice = playerChoice.toLowerCase();
+    let aiChoice = choose();
     switch(playerChoice){
 
-        case playerChoice == "rock":
+        case "rock":
+            
             switch(aiChoice){
 
-                case aiChoice == "scissors":
+                case "scissors":
                     result = "You Win!";
                     break;
                             
-                case aiChoice == "paper":
+                case "paper":
                     result = "You Lose!";
                     break;
 
@@ -30,14 +31,14 @@ function play(playerChoice){
             }
             break;
         
-        case playerChoice === "paper":
+        case "paper":
             switch(aiChoice){
 
-                case aiChoice === "rock":
+                case "rock":
                     result = "You Win!";
                     break;
                             
-                case aiChoice === "scissors":
+                case "scissors":
                     result = "You Lose!";
                     break;
 
@@ -48,14 +49,14 @@ function play(playerChoice){
             }
             break;
 
-        case playerChoice === "scissors":
+        case "scissors":
             switch(aiChoice){
 
-                case aiChoice === "paper":
+                case "paper":
                     result = "You Win!";
                     break;
                             
-                case aiChoice === "rock":
+                case "rock":
                     result = "You Lose!";
                     break;
 
