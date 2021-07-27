@@ -89,10 +89,10 @@ function playRound(playerSelection){
     return winner;
 }
 
-function game (rounds){
+function game (){
     let playerWins = 0;
     let computerWins = 0;
-    for (let i = 0; i < rounds; i++) {
+    for (let i = 0; i < 5; i++) {
         let playerChoice = prompt("Rock, Paper, Scissors?");
         
         let winner = playRound(playerChoice);
