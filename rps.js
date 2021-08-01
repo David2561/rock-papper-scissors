@@ -98,13 +98,14 @@ function playRound(e){
             break;
 
     }
-    if (player <= 5 && computer <= 5) {
+    if ((player < 5) && (computer < 5)) {
         resultDisplay.textContent=result;    
-        computeResult(winner);        
+               
     }
     else{
         resultDisplay.textContent="GAME OVER";
     }
+    computeResult(winner); 
     
     
 }
@@ -120,12 +121,12 @@ function computeResult(winner){
 
     }else{
         if (winner === "Player") {
-        
-            playerCount.textContent = `Player : ${++player}`;
+            player++;
+            playerCount.textContent = `Player : ${player}`;
             
         } else if(winner == "Computer"){
-    
-            computerCount.textContent = `computer : ${++computer}`;
+            computer++;
+            computerCount.textContent = `computer : ${computer}`;
     
         }
         
