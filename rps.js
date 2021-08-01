@@ -1,10 +1,19 @@
 let result = "";
 let choices=["rock","paper","scissors"];
+let player = 0;
+let computer = 0;
 
 const btn = document.querySelectorAll(".choice");
 btn.forEach(but => but.addEventListener('click',playRound));
 
+const resultDisplay = document.querySelector("#display");
+
+const gameResult = document.querySelector("#results");
             
+const playerCount = document.querySelector("#playerScore");
+
+const computerCount = document.querySelector("#computerScore");
+
 function computerPlay(choice){
     return choices[Math.floor(Math.random()*10)%3];
 }
@@ -89,42 +98,41 @@ function playRound(e){
             break;
 
     }
-    console.log(result);
-    return winner;
-}
-
-function game (){
-    let playerWins = 0;
-    let computerWins = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerChoice = prompt("Rock, Paper, Scissors?");
-        
-        let winner = playRound(playerChoice);
-
-        switch(winner){
-            case "Player":
-                playerWins++;
-                break;
-            
-            case "Computer":
-                computerWins++;
-                break;
-            
-            default:
-                break;
-        }
-        
-    }
-    if (playerWins > computerWins) {
-        console.log("You Win The Game!, Congratulations!!!")
+    if (player <= 5 && computer <= 5) {
+        resultDisplay.textContent=result;    
+        computeResult(winner);        
     }
     else{
-        if(playerWins < computerWins){
-            console.log("You Lose The Game!, Try Again!")
-        }
-        else{
-            console.log("A Tie?! How Did That Happen?!")
-        }
+        resultDisplay.textContent="GAME OVER";
     }
+    
+    
 }
+
+function computeResult(winner){
+    if (player>=5) {
+        
+        gameResult.textContent="Congratulations! You Win!!!";
+
+    }else if(computer>=5){
+
+        gameResult.textContent="Too Bad! You Lose, Try Again!!!";
+
+    }else{
+        if (winner === "Player") {
+        
+            playerCount.textContent = `Player : ${++player}`;
+            
+        } else if(winner == "Computer"){
+    
+            computerCount.textContent = `computer : ${++computer}`;
+    
+        }
+        
+    }
+    
+    
+}
+
+
 
