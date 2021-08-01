@@ -1,0 +1,26 @@
+html{
+    background-color: #444;
+}
+h1{
+    color: #DDD;
+    text-align: center;
+    margin-top: 5rem;
+}         
+div{
+    text-align: center;
+    
+}     
+
+img{
+    transform: scale(2);
+    margin-top: 5rem;
+    margin-right: 7rem;
+    border: .3rem solid black;
+}
+
+img:hover{
+    transform: scale(2.3);
+    border: .4rem solid white;
+    box-shadow: 0 0 .2rem white;
+}
+

@@ -1,15 +1,19 @@
 let result = "";
-let choices = new Array();
+let choices=["rock","paper","scissors"];
 
-choices=["rock","paper","scissors"];
+const btn = document.querySelectorAll(".choice");
+btn.forEach(but => but.addEventListener('click',playRound));
+
             
-function computerPlay(){
+function computerPlay(choice){
     return choices[Math.floor(Math.random()*10)%3];
 }
 
-function playRound(playerSelection){
+function playRound(e){
 
-    playerSelection = playerSelection.toLowerCase();
+    
+    let playerSelection = e.target.dataset.ch;
+
     let computerSelection = computerPlay();
     let winner = "None";
 
@@ -123,3 +127,4 @@ function game (){
         }
     }
 }
+
