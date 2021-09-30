@@ -1,21 +1,44 @@
 html{
     background-color: #444;
 }
+
+body{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-between;
+}
 h1{
     color: #DDD;
     text-align: center;
     margin-top: 5rem;
+    font-size:15rem;
+    font-weight: 700;
 }         
 div{
     text-align: center;
     
 }     
 
+#UI {
+    margin-top: 20rem;
+    display:flex;
+    justify-content:space-between;
+    gap:30rem;
+}
+
+#display{
+    font-size: 12rem;
+    font-family:'Courier New', Courier, monospace;
+}
+
 img{
     transform: scale(2);
-    margin-top: 5rem;
     margin-right: 7rem;
     border: .3rem solid black;
+    width: 25rem;
+    height:auto;
+
 }
 
 img:hover{
@@ -25,5 +48,9 @@ img:hover{
 }
 
 #results {
-    margin-top: 10rem;
+    display:flex;
+    justify-content: space-between;
+    margin-top: 20rem;
+    gap: 10rem;
+    font-size:15rem;
 }
